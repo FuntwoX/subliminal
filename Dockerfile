@@ -15,7 +15,7 @@ ENV LOOK_TIME=5
 COPY htpasswd /etc/.htpasswd
 
 # Directory for user video files
-VOLUME ["/download"]
+VOLUME ["/downloads"]
 
 COPY cronUserAndStart.sh /
 COPY cron_subliminal_user /
