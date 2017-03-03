@@ -2,6 +2,7 @@
 
 #cronjob creation
 mkdir -p /etc/periodic/${LOOK_TIME}min
+sed -e "s/#lang#/${LOOK_TIME}/g"  /cron_subliminal_user
 
 #for each user
 while IFS='' read -r line || [[ -n "$line" ]]; do
