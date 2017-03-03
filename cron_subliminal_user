@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/subliminal download /download/rtorrent/#user#/plex -a 5w ${LANG} -v

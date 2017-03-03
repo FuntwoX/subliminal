@@ -12,13 +12,13 @@ ENV LANG="-l en -l fr"
 #Each X minutes
 ENV LOOK_TIME=5
 
-#cronjob creation
-RUN mkdir -p /etc/periodic/${LOOK_TIME}min
-COPY cron_subliminal.sh /etc/periodic/${LOOK_TIME}min/cron_subliminal
-RUN chmod -R +x /etc/periodic/
-RUN crontab -l | { cat; echo "*/${LOOK_TIME}     *       *       *       *       run-parts /etc/periodic/${LOOK_TIME}min"; } | crontab -
+COPY htpasswd /etc/.htpasswd
 
-# Directory for video files
-VOLUME ["/home/video"]
+# Directory for user video files
+VOLUME ["/download"]
 
-CMD ["crond", "-f", "-d", "8"]
+COPY cronUserAndStart.sh /
+COPY cron_subliminal_user /
+
+RUN chmod +x cronUserAndStart.sh
+CMD ["/cronUserAndStart.sh", "/etc/.htpasswd"]
