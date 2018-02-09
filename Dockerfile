@@ -3,8 +3,11 @@ MAINTAINER <https://github.com/FuntwoX>
 
 ENV PYTHONIOENCODING="UTF-8"
 
+RUN \
+ git clone --depth=1 https://github.com/Diaoul/subliminal/tree/develop /opt/subliminaldev
+ 
 # Install subliminal
-RUN pip install subliminal
+RUN cd /opt/ && python /opt/subliminaldev/setup.py install
 
 #Language as IETF code
 ENV LANG="-l en -l fr"
