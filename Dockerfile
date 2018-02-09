@@ -4,7 +4,7 @@ MAINTAINER <https://github.com/FuntwoX>
 ENV PYTHONIOENCODING="UTF-8"
 
 RUN \
- git clone --depth=1 https://github.com/Diaoul/subliminal/tree/develop /opt/subliminaldev
+ git clone -b develop https://github.com/Diaoul/subliminal.git /opt/subliminaldev
  
 # Install subliminal
 RUN cd /opt/subliminaldev/ && python /opt/subliminaldev/setup.py install
