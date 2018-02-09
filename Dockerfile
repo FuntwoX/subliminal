@@ -7,7 +7,7 @@ RUN \
  git clone --depth=1 https://github.com/Diaoul/subliminal/tree/develop /opt/subliminaldev
  
 # Install subliminal
-RUN cd /opt/ && python /opt/subliminaldev/setup.py install
+RUN cd /opt/subliminaldev/ && python /opt/subliminaldev/setup.py install
 
 #Language as IETF code
 ENV LANG="-l en -l fr"
