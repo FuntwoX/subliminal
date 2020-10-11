@@ -4,7 +4,8 @@ MAINTAINER <https://github.com/FuntwoX>
 ENV PYTHONIOENCODING="UTF-8"
 
 RUN apk add --no-cache unrar \
-	git
+	git \
+	bash
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

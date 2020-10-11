@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #cronjob creation
 mkdir -p /etc/periodic/${LOOK_TIME}min
