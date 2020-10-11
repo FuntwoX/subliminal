@@ -13,7 +13,7 @@ RUN \
  git clone -b develop https://github.com/Diaoul/subliminal.git /opt/subliminaldev
  
 # Install subliminal
-RUN cd /opt/subliminaldev/ && pip install --no-cache-dir -r setup.py
+RUN cd /opt/subliminaldev/ && python /opt/subliminaldev/setup.py install
 
 #Language as IETF code
 ENV LANG="-l en -l fr"
