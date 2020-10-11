@@ -1,19 +1,21 @@
-FROM lsiobase/alpine.python3
+FROM python:3-alpine
 MAINTAINER <https://github.com/FuntwoX>
 
 ENV PYTHONIOENCODING="UTF-8"
 
-RUN \
- echo "**** install runtime packages ****" && \
- apk add --no-cache \
-	git \
-	unrar
+RUN apk add --no-cache unrar \
+	git
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
 RUN \
- git clone -b develop https://github.com/Diaoul/subliminal.git /opt/subliminaldev
+ git clone -b develop https://github.com/Diaoul/subliminal.git /usr/src/app
  
 # Install subliminal
-RUN cd /opt/subliminaldev/ && pip install --no-cache-dir -r setup.py
+RUN pip install --no-cache-dir -r requirements.txt
+
+WORKDIR /
 
 #Language as IETF code
 ENV LANG="-l en -l fr"
