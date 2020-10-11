@@ -4,8 +4,7 @@ MAINTAINER <https://github.com/FuntwoX>
 ENV PYTHONIOENCODING="UTF-8"
 
 RUN apk add --no-cache unrar \
-	git \
-	dos2unix
+	git
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -32,7 +31,6 @@ VOLUME ["/downloads"]
 COPY cronUserAndStart.sh /
 COPY cron_subliminal_user /
 
-RUN dos2unix /cronUserAndStart.sh && \
-	chmod +x cronUserAndStart.sh
+RUN chmod +x cronUserAndStart.sh
 
 CMD ["/cronUserAndStart.sh", "/etc/.htpasswd"]
