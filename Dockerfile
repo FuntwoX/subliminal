@@ -9,14 +9,11 @@ RUN \
 	git \
 	unrar
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
 RUN \
- git clone -b develop https://github.com/Diaoul/subliminal.git /usr/src/app
+ git clone -b develop https://github.com/Diaoul/subliminal.git /opt/subliminaldev
  
 # Install subliminal
-RUN pip install --no-cache-dir -r requirements.txt
+RUN cd /opt/subliminaldev/ && pip install --no-cache-dir -r requirements.txt
 
 #Language as IETF code
 ENV LANG="-l en -l fr"
