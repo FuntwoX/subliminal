@@ -15,6 +15,8 @@ RUN \
 # Install subliminal
 RUN cd /opt/subliminaldev/ && pip install --no-cache-dir -r requirements.txt
 
+RUN echo pip show subliminal
+
 #Language as IETF code
 ENV LANG="-l en -l fr"
 
