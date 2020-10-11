@@ -31,5 +31,5 @@ VOLUME ["/downloads"]
 COPY cronUserAndStart.sh /
 COPY cron_subliminal_user /
 
-#RUN chmod +x cronUserAndStart.sh
+RUN chmod +x cronUserAndStart.sh
 CMD ["/cronUserAndStart.sh", "/etc/.htpasswd"]
