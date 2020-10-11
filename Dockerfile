@@ -23,6 +23,8 @@ ENV LANG="-l en -l fr"
 #Each X minutes
 ENV LOOK_TIME=5
 
+COPY htpasswd /etc/.htpasswd
+
 # Directory for user video files
 VOLUME ["/downloads"]
 
@@ -31,4 +33,4 @@ COPY cron_subliminal_user /
 
 RUN chmod +x cronUserAndStart.sh
 
-CMD ["/cronUserAndStart.sh"]
+CMD ["/cronUserAndStart.sh", "/etc/.htpasswd"]
