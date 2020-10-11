@@ -4,6 +4,11 @@ MAINTAINER <https://github.com/FuntwoX>
 ENV PYTHONIOENCODING="UTF-8"
 
 RUN \
+ echo "**** install runtime packages ****" && \
+ apk add --no-cache \
+	git
+
+RUN \
  git clone -b develop https://github.com/Diaoul/subliminal.git /opt/subliminaldev
  
 # Install subliminal
