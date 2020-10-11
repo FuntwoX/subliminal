@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.python
+FROM python:3-alpine
 MAINTAINER <https://github.com/FuntwoX>
 
 ENV PYTHONIOENCODING="UTF-8"
