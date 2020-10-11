@@ -1,3 +1,2 @@
 #!/bin/sh
 
-subliminal download /downloads/rtorrent/#user#/plex #lang# -v >>/var/log/subliminal/subliminal.log 2>&1
