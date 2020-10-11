@@ -28,9 +28,9 @@ COPY htpasswd /etc/.htpasswd
 # Directory for user video files
 VOLUME ["/downloads"]
 
-COPY cronUserAndStart.sh /
+COPY hello.sh /
 COPY cron_subliminal_user /
 
-RUN chmod +x cronUserAndStart.sh
+RUN chmod +x hello.sh
 
-CMD ["/cronUserAndStart.sh", "/etc/.htpasswd"]
+CMD ["/hello.sh", "/etc/.htpasswd"]
